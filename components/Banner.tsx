@@ -13,7 +13,7 @@ function Banner({ netflixOriginals }: Props) {
     const [movie, setMovie] = useState<Movie | null>(null);
 
     function truncate(text: string, n: number) {
-        return text?.length > n ? text.substr(0, n - 1) + "..." : text;
+        return text?.length > n ? text?.substr(0, n - 1) + "..." : text; 
     }
 
     useEffect(() => {
@@ -30,7 +30,7 @@ function Banner({ netflixOriginals }: Props) {
                 {movie?.title || movie?.name || movie?.original_name}
             </h1>
             <p className="max-w-xs text-shadow-md text-xs md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl">
-                {truncate(movie?.overview, 150)}
+                {truncate(movie?.overview, 200)}
             </p>
 
             <div className="flex space-x-3">
